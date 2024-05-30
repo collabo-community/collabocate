@@ -42,6 +42,8 @@ function makePostRequest() {
     })
     .then((data) => {
       resultDiv.innerText = `New Issue Created: ${data.title}`;
+      issueTitleInput.value = "";
+      issueBodyInput.value = "";
     })
     .catch((error) => console.error("Error creating issue:", error));
 }
