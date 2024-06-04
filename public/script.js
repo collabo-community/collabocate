@@ -1,10 +1,12 @@
 const getButton = document.getElementById("getButton");
 const postButton = document.getElementById("postButton");
+const getPRButton = document.getElementById("getPRButton");
 const resultDiv = document.getElementById("result");
+const prResultDiv = document.getElementById("prResult");
 const issueTitleInput = document.getElementById("issueTitle");
 const issueBodyInput = document.getElementById("issueBody");
 
-// Function to make a GET request
+// Function to make a GET request for issues
 function makeGetRequest() {
   fetch("/issues")
     .then((response) => response.json())
@@ -22,7 +24,7 @@ function makeGetRequest() {
     .catch((error) => console.error("Error fetching issues:", error));
 }
 
-// Function to make a POST request
+// Function to make a POST request for issues
 function makePostRequest() {
   const title = issueTitleInput.value;
   const body = issueBodyInput.value;
@@ -48,6 +50,26 @@ function makePostRequest() {
     .catch((error) => console.error("Error creating issue:", error));
 }
 
+// Function to make a GET request for pull requests
+function makeGetPRRequest() {
+  fetch("/pull-requests")
+    .then((response) => response.json())
+    .then((data) => {
+      prResultDiv.innerHTML = "";
+
+      data.forEach((pr) => {
+        const prLink = document.createElement("a");
+        prLink.href = pr.html_url;
+        prLink.textContent = pr.title;
+        prLink.target = "_blank";
+        prResultDiv.appendChild(prLink);
+        prResultDiv.appendChild(document.createElement("br"));
+      });
+    })
+    .catch((error) => console.error("Error fetching pull requests:", error));
+}
+
 // Event listeners for button clicks
 getButton.addEventListener("click", makeGetRequest);
 postButton.addEventListener("click", makePostRequest);
+getPRButton.addEventListener("click", makeGetPRRequest);
