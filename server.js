@@ -14,7 +14,7 @@ const PORT = process.env.PORT || 3000;
 const GITHUB_ISSUES_API_URL =
   "https://api.github.com/repos/KBandipo/GitHub-REST-API/issues";
 const GITHUB_PR_API_URL =
-  "https://api.github.com/repos/KBandipo/Web-app-fetching-pull-request-from-GitHub/pulls";
+  "https://api.github.com/repos/KBandipo/GitHub-REST-API/pulls";
 
 // Endpoint to get issues
 app.get("/issues", async (req, res) => {
