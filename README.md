@@ -12,3 +12,4 @@ This project is a web application that allows users to fetch and create GitHub i
 
 git clone https://github.com/KBandipo/-GitHub-REST-API-Test.git
 cd your-repository
+npm install
