@@ -13,3 +13,15 @@ This project is a web application that allows users to fetch and create GitHub i
 git clone https://github.com/KBandipo/-GitHub-REST-API-Test.git
 cd your-repository
 npm install
+
+# Create .env file
+
+GITHUB_TOKEN=your_github_token
+
+# Run the Server
+
+node server.js
+
+# Open your browser and navigate to
+
+http://localhost:3000
