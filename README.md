@@ -1,4 +1,4 @@
-# -GitHub-REST-API-Test
+# GET and POST Requests from GitHub
 
 Post and Get issue of GitHub from the web app using GitHub REST API
 
@@ -37,10 +37,10 @@ Input Title
 
 node server.js
 
-### Open your browser and navigate to
+#### Open your browser and navigate to
 
 http://localhost:3000
 
-### Conclusion
+## Conclusion
 
 This project demonstrates a basic web application that interacts with the GitHub API. It showcases how to retrieve and create issues and pull requests using the GitHub API.
