@@ -9,7 +9,7 @@ app.use(express.json());
 app.use(express.static("public")); // Serve static files from the 'public' directory
 
 // Web-app-fetching-pull-request-from-GitHub
-// Responsive-Portfolio-Website-with-Reacts-and-Tailwind
+
 const PORT = process.env.PORT || 3000;
 const GITHUB_ISSUES_API_URL =
   "https://api.github.com/repos/KBandipo/GitHub-REST-API/issues";
