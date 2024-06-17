@@ -8,9 +8,10 @@ This project is a web application that allows users to fetch and create GitHub i
 
 ## Installation and Setup
 
-1. git clone https://github.com/KBandipo/-GitHub-REST-API-Test.git
-2. cd your-repository
-3. Install Dependencies: npm install
+1. Fork this repository https://github.com/collabo-community/collabocate
+2. git clone the forked repository into your local machine
+3. cd your-repository
+4. Install Dependencies: npm install
 
 ### Security and Authentication
 
