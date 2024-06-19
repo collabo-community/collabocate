@@ -19,7 +19,9 @@ The project uses GitHub tokens for authentication. The token is stored in the .e
 
 #### Create .env file
 
-GITHUB_TOKEN=your_github_token
+Provide your GitHub Personal access token
+
+GITHUB_PERSONAL_ACCESS_TOKEN=
 
 #### User Interface
 
