@@ -21,7 +21,7 @@ app.get("/issues", async (req, res) => {
   try {
     const response = await fetch(GITHUB_ISSUES_API_URL, {
       headers: {
-        Authorization: `Bearer ${process.env.GITHUB_TOKEN}`,
+        Authorization: `Bearer ${process.env.GITHUB_PERSONAL_ACCESS_TOKEN}`,
       },
     });
     const data = await response.json();
@@ -42,7 +42,7 @@ app.post("/issues", async (req, res) => {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
-        Authorization: `Bearer ${process.env.GITHUB_TOKEN}`,
+        Authorization: `Bearer ${process.env.GITHUB_PERSONAL_ACCESS_TOKEN}`,
       },
       body: JSON.stringify({ title, body }),
     });
@@ -66,7 +66,7 @@ app.get("/pull-requests", async (req, res) => {
   try {
     const response = await fetch(GITHUB_PR_API_URL, {
       headers: {
-        Authorization: `Bearer ${process.env.GITHUB_TOKEN}`,
+        Authorization: `Bearer ${process.env.GITHUB_PERSONAL_ACCESS_TOKEN}`,
       },
     });
     const data = await response.json();
