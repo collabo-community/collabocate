@@ -1,6 +1,6 @@
 # Collabocate
 
-Collabocate (Collabo~~rate~~ + ~~Communi~~cate) works with the GitHub REST API under the hood to remove the technical huddles associated with directly interacting with project repositories that reside on the GitHub platform, for non-technical users or contributors to your project (and technical users or contributors alike).
+Collabocate (Collabo~~rate~~ + ~~Communi~~cate) works with the GitHub REST API under the hood to remove the technical hurdles associated with directly interacting with project repositories that reside on the GitHub platform, for non-technical users or contributors to your project (and technical users or contributors alike).
 
 A two-way communication enabler for you and your project users and/or contributors to interact and collaborate (on your GitHub project) with no borders or barriers.
 
