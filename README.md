@@ -55,6 +55,6 @@ See our [Contributing Guide](https://docs.collabocommunity.com) for general info
         GITHUB_PERSONAL_ACCESS_TOKEN=add-your-token-here
         ````
         -->
-        - the port number of your choice (for the API server to run on) in the `.env` file e.g. `PORT=4200`
+        - the port number of your choice (for the API server to run on) in the `.env` file e.g. `PORT=8080`
    - Start the server: `npm start`
    - Open your browser and navigate to `http://localhost:server-port-number-here`
