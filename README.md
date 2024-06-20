@@ -26,7 +26,7 @@ See our [Contributing Guide](https://docs.collabocommunity.com) for general info
 - Change directory (cd) into the root of the **collabocate project/repository** cloned
 - After changing directory:
     - Install Dependencies: `npm install`
-    - Make a copy of the `.env.example` file, then rename the copy to `.env` - it is this renamed copy that you will store your secrets in. Ensure that the .env file is in the *root of the **collabocate project/repository** folder.
+    - Make a copy of the `.env.example` file, then rename the copy to `.env` - it is this renamed copy that you will store your secrets in. Ensure that the .env file is in the root of the **collabocate project/repository** folder.
     - In the `.env` file, supply:
         - The GitHub API url of your desired/chosen project in the `.env` file like this:
         ````
