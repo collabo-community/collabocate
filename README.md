@@ -1,49 +1,54 @@
-# GET and POST Requests from GitHub
+# Collabocate
 
-Post and Get issue of GitHub from the web app using GitHub REST API
+Collabocate (Collabo~~rate~~ + ~~Communi~~cate) works with the GitHub REST API under the hood to remove the technical huddles associated with directly interacting with project repositories that reside on the GitHub platform, for non-technical users or contributors to your project (and technical users or contributors alike).
 
-### Overview
+A two-way communication enabler for you and your project users and/or contributors to interact and collaborate (on your GitHub project) with no borders or barriers.
 
-This project is a web application that allows users to fetch and create GitHub issues and view pull requests. It consists of an HTML frontend for user interaction and an Express.js backend to communicate with the GitHub API.
+Your users and contributors can:
+- Seemlessly interact with one or more of your GitHub repositories from the comfort of your application's interface, no new/long learning curve required.
+- Other information coming soon
 
-## Installation and Setup
+## How to integrate
+> Information coming soon. While you wait, you are welcome to contribute to the project.
 
-1. Fork this repository https://github.com/collabo-community/collabocate
-2. git clone the forked repository into your local machine
-3. cd your-repository
-4. Install Dependencies: npm install
+## How to contribute
+See our [Contributing Guide](https://docs.collabocommunity.com) for general information on how to contribute to Collabo Community projects. Any kind of positively impacting contributions welcome!
 
-### Security and Authentication
+## Local installation and setup guide for code contributors
+- Fork the repository from https://github.com/collabo-community/collabocate
+- Clone the forked repository into your local computer
 
-The project uses GitHub tokens for authentication. The token is stored in the .env file and is used to authenticate API requests.
+> **Note 1 of 2:** There is migration going on for the API server, therefore there are 2 servers. Reason for retaining the old server for now: we still want to be able to run both the old API server and the new one, for comparison, upgrade and collaboration purposes.
 
-#### Create .env file
+> **Note 2 of 2:** See instructions below for whether you wish to run the older API server or the new API server.
 
-Provide your GitHub Personal access token
+## Running the server: Old API server
+- Change directory (cd) into the root of the **collabocate project/repository** cloned
+- After changing directory:
+    - Install Dependencies: `npm install`
+    - Make a copy of the `.env.example` file, then rename the copy to `.env` - it is this renamed copy that you will store your secrets in. Ensure that the .env file is in the *root of the **collabocate project/repository** folder.
+    - In the `.env` file, supply:
+        - The GitHub API url of your desired/chosen project in the `.env` file like this:
+        ````
+        GITHUB_API_URL=https://api.github.com/repos/your-own-github-account-user-name-will-be-here-instead/the-name-of-the-repo-you-want-to-interact-with
+        ````
+        - A GitHub personal access token for the GitHub account you are trying to access the repo for like this: `GITHUB_PERSONAL_ACCESS_TOKEN=add-your-token-here`
+        - the port number of your choice (for the API server to run on) in the `.env` file e.g. PORT=4200
+   - Start the server: `npm start`
+   - Open your browser and navigate to `http://localhost:server-port-number-here`
 
-GITHUB_PERSONAL_ACCESS_TOKEN=
-
-#### User Interface
-
-Buttons
-
-- GET Issues: Retrieves a list of issues from GitHub
-- POST Issue: Creates a new issue on GitHub
-- GET Pull Requests: Retrieves a list of pull requests from GitHub
-
-Input Title
-
-- Issue Title: Input field for the issue title
-- Issue Body: Input field for the issue body
-
-## Run the Server
-
-node server.js
-
-#### Open your browser and navigate to
-
-http://localhost:3000
-
-## Conclusion
-
-This project demonstrates a basic web application that interacts with the GitHub API. It showcases how to retrieve and create issues and pull requests using the GitHub API.
+## Running the server: New API server
+- Change directory (cd) into the `server` folder of in the root of the collabocate project/repository cloned
+- After changing directory:
+    - Make a copy of the `.env.example` file, then rename the copy to `.env` - it is this renamed copy that you will store your secrets in. Ensure that the .env file is in the root of the `server` folder.
+    - In the `.env` file, supply:
+        <!--
+        - The GitHub API url of your desired/chosen project in the `.env` file like this:
+        ````
+        GITHUB_API_URL=https://api.github.com/repos/your-own-github-account-user-name-will-be-here-instead/the-name-of-the-repo-you-want-to-interact-with
+        ````
+        - A GitHub personal access token for the GitHub account you are trying to access the repo for like this: `GITHUB_PERSONAL_ACCESS_TOKEN=add-your-token-here`
+        -->
+        - the port number of your choice (for the API server to run on) in the `.env` file e.g. PORT=4200
+   - Start the server: `npm start`
+   - Open your browser and navigate to `http://localhost:server-port-number-here`
