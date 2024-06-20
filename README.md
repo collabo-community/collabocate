@@ -2,9 +2,10 @@
 
 Collabocate (Collabo~~rate~~ + ~~Communi~~cate) works with the GitHub REST API under the hood to remove the technical hurdles associated with directly interacting with project repositories that reside on the GitHub platform, for non-technical users or contributors to your project (and technical users or contributors alike).
 
-A two-way communication enabler for you and your project users and/or contributors to interact and collaborate (on your GitHub project) with no borders or barriers.
+A two-way communication enabler for you and your project users and/or contributors to interact and collaborate on your GitHub project with no borders or barriers.
 
 Your users and contributors can:
+- "Kill two (2) birds with one (1) stone (and at the same time)" i.e. They can harness both the "super powers" of your app and that of GitHub at the same time optimally, as though they are dealing with just one app. 
 - Seemlessly interact with one or more of your GitHub repositories from the comfort of your application's interface, no new/long learning curve required.
 - Other information coming soon
 
