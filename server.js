@@ -11,10 +11,9 @@ app.use(express.static("public")); // Serve static files from the 'public' direc
 // Web-app-fetching-pull-request-from-GitHub
 
 const PORT = process.env.PORT || 3000;
-const GITHUB_ISSUES_API_URL =
-  "https://api.github.com/repos/KBandipo/GitHub-REST-API/issues";
-const GITHUB_PR_API_URL =
-  "https://api.github.com/repos/KBandipo/GitHub-REST-API/pulls";
+const GITHUB_API_URL = process.env.GITHUB_API_URL;
+const GITHUB_ISSUES_API_URL = `${GITHUB_API_URL}/issues`;
+const GITHUB_PR_API_URL = `${GITHUB_API_URL}/pulls`;
 
 // Endpoint to get issues
 app.get("/issues", async (req, res) => {
