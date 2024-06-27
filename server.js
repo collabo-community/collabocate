@@ -8,7 +8,7 @@ const app = express();
 app.use(express.json());
 app.use(express.static("public")); // Serve static files from the 'public' directory
 
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 3001;
 
 // Endpoint to get issues
 app.get("/issues", async (req, res) => {
