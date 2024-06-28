@@ -73,6 +73,24 @@ app.get("/pull-requests", async (req, res) => {
   }
 });
 
+// Endpoint to get public repositories
+app.get("/repositories", async (req, res) => {
+  try {
+    const response = await fetch(process.env.GITHUB_REPOS_API_URL, {
+      headers: {
+        Authorization: `Bearer ${process.env.GITHUB_PERSONAL_ACCESS_TOKEN}`,
+      },
+    });
+    const data = await response.json();
+    if (!response.ok) {
+      throw new Error(data.message || "Error fetching repositories");
+    }
+    res.json(data);
+  } catch (error) {
+    res.status(500).json({ error: "Error fetching repositories" });
+  }
+});
+
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
 });
