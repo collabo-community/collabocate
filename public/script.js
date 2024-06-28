@@ -5,6 +5,7 @@ const resultDiv = document.getElementById("result");
 const prResultDiv = document.getElementById("prResult");
 const issueTitleInput = document.getElementById("issueTitle");
 const issueBodyInput = document.getElementById("issueBody");
+const repoResultDiv = document.getElementById("repoResult");
 
 // Function to make a GET request for issues
 function makeGetRequest() {
