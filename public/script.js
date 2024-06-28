@@ -75,7 +75,6 @@ function fetchRepositories() {
   fetch("/repositories")
     .then((response) => response.json())
     .then((data) => {
-      console.log(data);
       repoResultDiv.innerHTML = "";
       data.forEach((repo) => {
         const repoLink = document.createElement("a");
