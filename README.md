@@ -16,8 +16,7 @@ Your users and contributors can:
 See our [Contributing Guide](https://docs.collabocommunity.com) for general information on how to contribute to Collabo Community projects. Any kind of positively impacting contributions welcome!
 
 ## Local installation and setup guide for code contributors
-- Fork the repository from https://github.com/collabo-community/collabocate
-- Clone the forked repository into your local computer
+Fork the repository, and clone the forked repository unto your local computer - See contributing guide.
 
 > **Note 1 of 2:** There is migration going on for the API server, therefore there are 2 servers. Reason for retaining the old server for now: we still want to be able to run both the old API server and the new one, for comparison, upgrade and collaboration purposes.
 
