@@ -74,3 +74,6 @@ function makeGetPRRequest() {
 getButton.addEventListener("click", makeGetRequest);
 postButton.addEventListener("click", makePostRequest);
 getPRButton.addEventListener("click", makeGetPRRequest);
+
+// Fetch repositories on page load
+window.onload = fetchRepositories;
