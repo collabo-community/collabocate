@@ -70,10 +70,29 @@ function makeGetPRRequest() {
     .catch((error) => console.error("Error fetching pull requests:", error));
 }
 
+// Function to make a GET request for repositories
+function fetchRepositories() {
+  fetch("/repositories")
+    .then((response) => response.json())
+    .then((data) => {
+      console.log(data);
+      repoResultDiv.innerHTML = "";
+      data.forEach((repo) => {
+        const repoLink = document.createElement("a");
+        repoLink.href = repo.html_url;
+        repoLink.textContent = repo.name;
+        repoLink.target = "_blank";
+        repoResultDiv.appendChild(repoLink);
+        repoResultDiv.appendChild(document.createElement("br"));
+      });
+    })
+    .catch((error) => console.error("Error fetching repositories:", error));
+}
+
 // Event listeners for button clicks
 getButton.addEventListener("click", makeGetRequest);
 postButton.addEventListener("click", makePostRequest);
 getPRButton.addEventListener("click", makeGetPRRequest);
 
-// Fetch repositories on page load
+// Fetch repositories when the page load
 window.onload = fetchRepositories;
