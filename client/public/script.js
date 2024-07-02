@@ -7,7 +7,7 @@ const issueTitleInput = document.getElementById("issueTitle");
 const issueBodyInput = document.getElementById("issueBody");
 
 // Define the base URL
-const baseURL = "http://localhost:3001";
+const baseURL = "http://localhost:3000";
 
 // Custom fetch function that prepends the base URL
 function customFetch(endpoint, options = {}) {

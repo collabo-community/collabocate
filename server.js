@@ -1,14 +1,15 @@
 import express from "express";
 import fetch from "node-fetch";
 import dotenv from "dotenv";
+import cors from 'cors';
 
 dotenv.config();
 
 const app = express();
+app.use(cors())
 app.use(express.json());
-app.use(express.static("public")); // Serve static files from the 'public' directory
 
-const PORT = process.env.PORT || 3001;
+const PORT = process.env.PORT || 3000;
 
 // Endpoint to get issues
 app.get("/issues", async (req, res) => {

@@ -1,0 +1,19 @@
+{
+    "type": "module",
+    "dependencies": {
+      "dotenv": "^16.4.5",
+      "express": "^4.19.2",
+      "nodemon": "^3.1.4"
+    },
+    "scripts": {
+      "start": "node app.js",
+      "start:dev": "nodemon app.js"
+    },
+    "name": "-github-client",
+    "description": "Post and Get issue of GitHub from the web app using GitHub REST API",
+    "version": "1.0.0",
+    "main": "script.js",
+    "keywords": ["client", "collaboration"],
+    "author": "",
+    "license": "ISC"
+  }
