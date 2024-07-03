@@ -1,8 +1,11 @@
 import express from "express";
 import fetch from "node-fetch";
 import dotenv from "dotenv";
+import dotenvExpand from "dotenv-expand";
 
-dotenv.config();
+// Load and expand environment variables from .env file
+const envVar = dotenv.config();
+dotenvExpand.expand(envVar);
 
 const app = express();
 app.use(express.json());
@@ -73,7 +76,7 @@ app.get("/pull-requests", async (req, res) => {
   }
 });
 
-// Endpoint to get public repositories
+// Endpoint to get repositories
 app.get("/repositories", async (req, res) => {
   try {
     const response = await fetch(process.env.GITHUB_REPOS_API_URL, {
