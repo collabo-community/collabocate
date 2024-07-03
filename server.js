@@ -76,7 +76,7 @@ app.get("/pull-requests", async (req, res) => {
   }
 });
 
-// Endpoint to get repositories
+// Endpoint to get public repositories
 app.get("/repositories", async (req, res) => {
   try {
     const response = await fetch(process.env.GITHUB_REPOS_API_URL, {
