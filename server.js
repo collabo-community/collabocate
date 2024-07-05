@@ -8,18 +8,12 @@ const app = express();
 app.use(express.json());
 app.use(express.static("public")); // Serve static files from the 'public' directory
 
-// Web-app-fetching-pull-request-from-GitHub
-
 const PORT = process.env.PORT || 3000;
-const GITHUB_ISSUES_API_URL =
-  "https://api.github.com/repos/KBandipo/GitHub-REST-API/issues";
-const GITHUB_PR_API_URL =
-  "https://api.github.com/repos/KBandipo/GitHub-REST-API/pulls";
 
 // Endpoint to get issues
 app.get("/issues", async (req, res) => {
   try {
-    const response = await fetch(GITHUB_ISSUES_API_URL, {
+    const response = await fetch(`${process.env.GITHUB_API_URL}/issues`, {
       headers: {
         Authorization: `Bearer ${process.env.GITHUB_PERSONAL_ACCESS_TOKEN}`,
       },
@@ -38,7 +32,7 @@ app.get("/issues", async (req, res) => {
 app.post("/issues", async (req, res) => {
   const { title, body } = req.body;
   try {
-    const response = await fetch(GITHUB_ISSUES_API_URL, {
+    const response = await fetch(`${process.env.GITHUB_API_URL}/issues`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -67,7 +61,7 @@ app.post("/issues", async (req, res) => {
 // Endpoint to get pull requests
 app.get("/pull-requests", async (req, res) => {
   try {
-    const response = await fetch(GITHUB_PR_API_URL, {
+    const response = await fetch(`${process.env.GITHUB_API_URL}/pulls`, {
       headers: {
         Authorization: `Bearer ${process.env.GITHUB_PERSONAL_ACCESS_TOKEN}`,
       },
