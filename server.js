@@ -38,7 +38,10 @@ app.post("/issues", async (req, res) => {
         "Content-Type": "application/json",
         Authorization: `Bearer ${process.env.GITHUB_PERSONAL_ACCESS_TOKEN}`,
       },
-      body: JSON.stringify({ title, body }),
+      body: JSON.stringify({ 
+        title: `[GitHubSync] ${title}`,
+        body: body + '\n\n' + '#' + '\n' + '> Submitted via **Collabocate** [[GitHubSync]](https://github.com/collabo-community/collabocate)',
+      }),
     });
 
     if (!response.ok) {
