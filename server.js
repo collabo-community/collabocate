@@ -1,12 +1,13 @@
 import express from "express";
 import fetch from "node-fetch";
 import dotenv from "dotenv";
+import cors from "cors";
 
 dotenv.config();
 
 const app = express();
 app.use(express.json());
-app.use(express.static("public")); // Serve static files from the 'public' directory
+app.use(cors());
 
 const PORT = process.env.PORT || 3000;
 
