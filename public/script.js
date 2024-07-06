@@ -1,3 +1,5 @@
+import config from './config.generated.json' with { type: 'json' };
+
 const getButton = document.getElementById("getButton");
 const postButton = document.getElementById("postButton");
 const getPRButton = document.getElementById("getPRButton");
@@ -6,14 +8,9 @@ const prResultDiv = document.getElementById("prResult");
 const issueTitleInput = document.getElementById("issueTitle");
 const issueBodyInput = document.getElementById("issueBody");
 
-/** Construct full URL */
-function constructURL(endpoint) {
-  return `${"http://localhost:3000"}${endpoint}`;
-}
-
 // Function to make a GET request for issues
 function makeGetRequest() {
-  fetch(constructURL("/issues"))
+  fetch(`${config.backend_url}/issues`)
     .then((response) => response.json())
     .then((data) => {
       resultDiv.innerHTML = "";
@@ -34,7 +31,7 @@ function makePostRequest() {
   const title = issueTitleInput.value;
   const body = issueBodyInput.value;
 
-  fetch(constructURL("/issues"), {
+  fetch(`${config.backend_url}/issues`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -57,7 +54,7 @@ function makePostRequest() {
 
 // Function to make a GET request for pull requests
 function makeGetPRRequest() {
-  fetch(constructURL("/pull-requests"))
+  fetch(`${config.backend_url}/pull-requests`)
     .then((response) => response.json())
     .then((data) => {
       prResultDiv.innerHTML = "";
