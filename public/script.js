@@ -6,9 +6,14 @@ const prResultDiv = document.getElementById("prResult");
 const issueTitleInput = document.getElementById("issueTitle");
 const issueBodyInput = document.getElementById("issueBody");
 
+/** Construct full URL */
+function constructURL(endpoint) {
+  return `${"http://localhost:3000"}${endpoint}`;
+}
+
 // Function to make a GET request for issues
 function makeGetRequest() {
-  fetch("/issues")
+  fetch(constructURL("/issues"))
     .then((response) => response.json())
     .then((data) => {
       resultDiv.innerHTML = "";
@@ -29,7 +34,7 @@ function makePostRequest() {
   const title = issueTitleInput.value;
   const body = issueBodyInput.value;
 
-  fetch("/issues", {
+  fetch(constructURL("/issues"), {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -52,7 +57,7 @@ function makePostRequest() {
 
 // Function to make a GET request for pull requests
 function makeGetPRRequest() {
-  fetch("/pull-requests")
+  fetch(constructURL("/pull-requests"))
     .then((response) => response.json())
     .then((data) => {
       prResultDiv.innerHTML = "";

@@ -6,7 +6,8 @@
     "node-fetch": "^3.3.2"
   },
   "scripts": {
-    "start": "node server.js"
+    "start": "node server.js",
+    "start:client": "node client-server.js"
   },
   "name": "-github-rest-api-test",
   "description": "Post and Get issue of GitHub from the web app using GitHub REST API",
