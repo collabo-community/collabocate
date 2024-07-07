@@ -1,4 +1,4 @@
-import config from './config.generated.json' with { type: 'json' };
+import config from './lib/load.config.js';
 
 const getButton = document.getElementById("getButton");
 const postButton = document.getElementById("postButton");
