@@ -16,7 +16,7 @@ const PORT = process.env.PORT || 3000;
 // Endpoint to get issues
 app.get("/issues", async (req, res) => {
   try {
-    const response = await fetch(`${process.env.GITHUB_API_URL}/issues`, {
+    const response = await fetch(`${process.env.REPO_URL}/issues`, {
       headers: {
         Authorization: `Bearer ${process.env.GITHUB_PERSONAL_ACCESS_TOKEN}`,
       },
@@ -35,7 +35,7 @@ app.get("/issues", async (req, res) => {
 app.post("/issues", async (req, res) => {
   const { title, body } = req.body;
   try {
-    const response = await fetch(`${process.env.GITHUB_API_URL}/issues`, {
+    const response = await fetch(`${process.env.REPO_URL}/issues`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -61,7 +61,7 @@ app.post("/issues", async (req, res) => {
 // Endpoint to get pull requests
 app.get("/pull-requests", async (req, res) => {
   try {
-    const response = await fetch(`${process.env.GITHUB_API_URL}/pulls`, {
+    const response = await fetch(`${process.env.REPO_URL}/pulls`, {
       headers: {
         Authorization: `Bearer ${process.env.GITHUB_PERSONAL_ACCESS_TOKEN}`,
       },
