@@ -4,8 +4,7 @@
   "description": "Typescript (ES Module import/export syntax and async-await asynchronous code handing method) Backend API boilerplate template generated via Collabo Community's create-collabo-app project",
   "main": "src/server.ts",
   "scripts": {
-    "dev:local": "nodemon --exec ts-node src/server.ts",
-    "dev:atlas": "nodemon --exec ts-node src/server.ts",
+    "dev": "nodemon --exec ts-node src/server.ts",
     "lint": "esw src --ext .ts --color",
     "lint:watch": "npm run lint -- --watch"
   },
