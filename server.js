@@ -79,11 +79,14 @@ app.get("/pull-requests", async (req, res) => {
 // Endpoint to get public repositories
 app.get("/repositories", async (req, res) => {
   try {
-    const response = await fetch(process.env.GITHUB_REPOS_API_URL, {
-      headers: {
-        Authorization: `Bearer ${process.env.GITHUB_PERSONAL_ACCESS_TOKEN}`,
-      },
-    });
+    const response = await fetch(
+      `${process.env.GITHUB_API_BASE_URL}/user/repos`,
+      {
+        headers: {
+          Authorization: `Bearer ${process.env.GITHUB_PERSONAL_ACCESS_TOKEN}`,
+        },
+      }
+    );
     const data = await response.json();
     if (!response.ok) {
       throw new Error(data.message || "Error fetching repositories");
