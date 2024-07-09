@@ -1,9 +1,4 @@
-import { spawn } from 'child_process';
-import package_json from '../../../package.json';
 import chalk from 'chalk';
-import dotenv from 'dotenv';
-
-dotenv.config();
 
 /* eslint-disable no-console */
 
