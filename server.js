@@ -4,9 +4,8 @@ import dotenv from "dotenv";
 import dotenvExpand from "dotenv-expand";
 import cors from "cors";
 
-// Load and expand environment variables from .env file
-const envVar = dotenv.config();
-dotenvExpand.expand(envVar);
+const dotEnv = dotenv.config();
+dotenvExpand.expand(dotEnv);
 
 const app = express();
 app.use(express.json());
@@ -17,7 +16,7 @@ const PORT = process.env.PORT || 3000;
 // Endpoint to get issues
 app.get("/issues", async (req, res) => {
   try {
-    const response = await fetch(`${process.env.REPO_URL}/issues`, {
+    const response = await fetch(`${process.env.REPO_API_URL}/issues`, {
       headers: {
         Authorization: `Bearer ${process.env.GITHUB_PERSONAL_ACCESS_TOKEN}`,
       },
@@ -36,7 +35,7 @@ app.get("/issues", async (req, res) => {
 app.post("/issues", async (req, res) => {
   const { title, body } = req.body;
   try {
-    const response = await fetch(`${process.env.REPO_URL}/issues`, {
+    const response = await fetch(`${process.env.REPO_API_URL}/issues`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -65,7 +64,7 @@ app.post("/issues", async (req, res) => {
 // Endpoint to get pull requests
 app.get("/pull-requests", async (req, res) => {
   try {
-    const response = await fetch(`${process.env.REPO_URL}/pulls`, {
+    const response = await fetch(`${process.env.REPO_API_URL}/pulls`, {
       headers: {
         Authorization: `Bearer ${process.env.GITHUB_PERSONAL_ACCESS_TOKEN}`,
       },

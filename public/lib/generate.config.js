@@ -1,8 +1,10 @@
 import fs from 'fs';
 import { join } from 'path';
 import dotenv from 'dotenv';
+import dotenvExpand from 'dotenv-expand';
 
-dotenv.config();
+const dotEnv = dotenv.config();
+dotenvExpand.expand(dotEnv);
 
 const file = {
     createWithContent: ({ targetDirectory, filePathName, content }) => {

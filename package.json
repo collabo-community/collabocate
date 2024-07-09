@@ -8,8 +8,8 @@
     "node-fetch": "^3.3.2"
   },
   "scripts": {
-    "start": "nodemon server.js",
-    "start:client": "node public/lib/generate.config.js && node public/server.js"
+    "dev:api": "nodemon server.js",
+    "dev:client": "node public/lib/generate.config.js && node public/server.js"
   },
   "devDependencies": {
     "nodemon": "^2.0.22"
