@@ -1,13 +1,18 @@
 {
   "type": "module",
   "dependencies": {
+    "cors": "^2.8.5",
     "dotenv": "^16.4.5",
     "dotenv-expand": "^11.0.6",
     "express": "^4.19.2",
     "node-fetch": "^3.3.2"
   },
   "scripts": {
-    "start": "node server.js"
+    "start": "nodemon server.js",
+    "start:client": "node public/lib/generate.config.js && node public/server.js"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.22"
   },
   "name": "-github-rest-api-test",
   "description": "Post and Get issue of GitHub from the web app using GitHub REST API",

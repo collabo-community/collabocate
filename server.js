@@ -2,6 +2,7 @@ import express from "express";
 import fetch from "node-fetch";
 import dotenv from "dotenv";
 import dotenvExpand from "dotenv-expand";
+import cors from "cors";
 
 // Load and expand environment variables from .env file
 const envVar = dotenv.config();
@@ -9,7 +10,7 @@ dotenvExpand.expand(envVar);
 
 const app = express();
 app.use(express.json());
-app.use(express.static("public")); // Serve static files from the 'public' directory
+app.use(cors());
 
 const PORT = process.env.PORT || 3000;
 
@@ -41,7 +42,10 @@ app.post("/issues", async (req, res) => {
         "Content-Type": "application/json",
         Authorization: `Bearer ${process.env.GITHUB_PERSONAL_ACCESS_TOKEN}`,
       },
-      body: JSON.stringify({ title, body }),
+      body: JSON.stringify({ 
+        title: `[GitHubSync] ${title}`,
+        body: body + '\n\n' + '#' + '\n' + '> Submitted via **Collabocate** [[GitHubSync]](https://github.com/collabo-community/collabocate)',
+      }),
     });
 
     if (!response.ok) {

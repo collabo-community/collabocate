@@ -1,3 +1,5 @@
+import config from './lib/load.config.js';
+
 const getButton = document.getElementById("getButton");
 const postButton = document.getElementById("postButton");
 const getPRButton = document.getElementById("getPRButton");
@@ -9,7 +11,7 @@ const repoResultDiv = document.getElementById("repoResult");
 
 // Function to make a GET request for issues
 function makeGetRequest() {
-  fetch("/issues")
+  fetch(`${config.backend_url}/issues`)
     .then((response) => response.json())
     .then((data) => {
       resultDiv.innerHTML = "";
@@ -30,7 +32,7 @@ function makePostRequest() {
   const title = issueTitleInput.value;
   const body = issueBodyInput.value;
 
-  fetch("/issues", {
+  fetch(`${config.backend_url}/issues`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -53,7 +55,7 @@ function makePostRequest() {
 
 // Function to make a GET request for pull requests
 function makeGetPRRequest() {
-  fetch("/pull-requests")
+  fetch(`${config.backend_url}/pull-requests`)
     .then((response) => response.json())
     .then((data) => {
       prResultDiv.innerHTML = "";
