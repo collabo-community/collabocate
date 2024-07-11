@@ -9,26 +9,27 @@
   <body>
     <div class="container">
       <div>
-        <button id="getButton">GET Issues</button>
-        <div id="result"></div>
+        <a href="#">Fixed Repo</a>
+        <a href="#">Select Repo from list</a>
       </div>
-
+      <div>
+        <label for="repoResult">Choose a repository:</label>
+        <select name="repo_result" id="repoResult">
+          <option value="">--Select a repository--</option>
+          <!-- Relace the 3 options below with dynamic values from API server -->
+          <option value="create-collabo-app">Create Collabo App</option>
+          <option value="building-blocks">Building Blocks</option>
+          <option value="ati-bee-bee-lo">Ati bee bee lo</option>
+          <!-- --------------------------------------------- -->
+        </select>
+      </div>
       <div>
         <label for="issueTitle">Issue Title</label><br />
         <input type="text" id="issueTitle" /><br />
         <label for="issueBody">Issue Body</label><br />
         <textarea id="issueBody"></textarea><br />
-        <button id="postButton">POST Issue</button>
-      </div>
-
-      <div>
-        <button id="getPRButton">GET Pull Requests</button>
-        <div id="prResult"></div>
-      </div>
-
-      <div>
-        <h2>Repositories</h2>
-        <div id="repoResult"></div>
+        <button id="submitIssueButton">Submit Issue Ticket</button>
+        <div id="displayToastrMessage"></div>
       </div>
     </div>
 
