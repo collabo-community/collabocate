@@ -1,6 +1,7 @@
 import 'express-async-errors';
 import express, { Express, NextFunction, Request, Response } from 'express';
 import dotenv from 'dotenv';
+import dotenvExpand from 'dotenv-expand';
 import morgan from 'morgan';
 import cors from 'cors';
 import { errorHandler } from './lib/errors/ErrorHandler';
@@ -8,7 +9,8 @@ import { CustomErrorInterface } from './lib/errors/CustomError';
 import { notFoundErr } from './lib/errors/Errors';
 import { router as appRouter } from './api/routes/app.route';
 
-dotenv.config();
+const dotEnv = dotenv.config();
+dotenvExpand.expand(dotEnv);
 
 const app: Express = express();
 
