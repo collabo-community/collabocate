@@ -7,7 +7,7 @@ import cors from 'cors';
 import { errorHandler } from './lib/errors/ErrorHandler';
 import { CustomErrorInterface } from './lib/errors/CustomError';
 import { notFoundErr } from './lib/errors/Errors';
-import { router as appRouter } from './api/routes/app.route';
+import { router as appRouter } from './api/app.route';
 
 const dotEnv = dotenv.config();
 dotenvExpand.expand(dotEnv);
