@@ -19,7 +19,7 @@ const jsonContent = `{
 `;
 
 file.createWithContent({
-    targetDirectory: './client',
+    targetDirectory: './@test-client',
     filePathName: 'config.generated.json',
     content: jsonContent,
 });
