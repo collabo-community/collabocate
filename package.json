@@ -1,7 +1,7 @@
 {
   "name": "@collabo-community/collabocate",
   "version": "0.0.0",
-  "description": "Collabocate integration app",
+  "description": "Collabocate is a set of integration apps to help non-technical and technical contributors/users alike, to participate in open source project development and get carried along",
   "main": "api-server/server.ts",
   "scripts": {
     "dev:client": "node -r esm @test-client/lib/generate.config.js && nodemon -r esm @test-client/server.js",
@@ -9,8 +9,6 @@
     "lint": "esw src --ext .ts --color",
     "lint:watch": "npm run lint -- --watch"
   },
-  "author": "Obiagba Mary",
-  "license": "ISC",
   "dependencies": {
     "cors": "^2.8.5",
     "dotenv": "^16.0.3",
@@ -36,5 +34,16 @@
     "nodemon": "^2.0.22",
     "ts-node": "^10.9.1",
     "typescript": "^5.0.4"
-  }
+  },
+  "homepage": "https://github.com/collabo-community/collabocate#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/collabo-community/collabocate.git"
+  },
+  "bugs": {
+    "url": "https://github.com/collabo-community/issue-tickets-ready-for-fixing/issues"
+  },
+  "author": "Collabo Community [Code Collabo]",
+  "license": "AGPL v3.0",
+  "contributors": ["Find list of contributors in project README: https://github.com/collabo-community/collabocate?tab=readme-ov-file#contributors"]
 }
