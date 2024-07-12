@@ -11,7 +11,17 @@
   "contributorsPerLine": 6,
   "contributorsSortAlphabetically": true,
   "skipCi": true,
-  "contributors": [],
+  "contributors": [
+    {
+      "login": "tylerjusfly",
+      "name": "Momoh Taiwo",
+      "avatar_url": "https://avatars.githubusercontent.com/u/53145644?v=4",
+      "profile": "https://tylerjusflyportfolio.netlify.app/",
+      "contributions": [
+        "code"
+      ]
+    }
+  ],
   "commitConvention": "angular",
   "commitType": "docs"
 }
