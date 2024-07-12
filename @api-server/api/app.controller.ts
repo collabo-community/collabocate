@@ -16,19 +16,17 @@ export interface ApiInfo {
   };
 }
 
-const contributors: string[] = ['Kehinde Bandipo', 'Mary Obiagba'];
-
 export const getAppController =  async (req: Request, res: Response) => {
     const apiInfo: ApiInfo = {
-      name: 'Collabocate API',
-      description: 'Live updates to and from Github REST API',
-      built_at: 'Collabo Community [Code Collabo tech arm]',
+      name: 'Collabocate [GitHubSync] API',
+      description: 'Live updates to and from user interface via the Github REST API',
+      built_at: 'Collabo Community [Code Collabo]',
       github: {
         repository: 'https://github.com/collabo-community/collabocate',
       },
       contributors: {
-        count: contributors.length,
-        list: contributors,
+        count: 4, // TODO: Dynamically get the list of contributors from GitHub
+        list: ['Find list of contributors in project README: https://github.com/collabo-community/collabocate?tab=readme-ov-file#contributors'],
       },
     };
     res.status(200).json(apiInfo);
