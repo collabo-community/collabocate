@@ -22,6 +22,13 @@ Contribute to project: See [Community and Documenation](https://resources.collab
 <!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
 <!-- prettier-ignore-start -->
 <!-- markdownlint-disable -->
+<table>
+  <tbody>
+    <tr>
+      <td align="center" valign="top" width="16.66%"><a href="https://tylerjusflyportfolio.netlify.app/"><img src="https://avatars.githubusercontent.com/u/53145644?v=4?s=100" width="100px;" alt="Momoh Taiwo"/><br /><sub><b>Momoh Taiwo</b></sub></a><br /><a href="https://github.com/collabo-community/collabocate/commits?author=tylerjusfly" title="Code">💻</a></td>
+    </tr>
+  </tbody>
+</table>
 
 <!-- markdownlint-restore -->
 <!-- prettier-ignore-end -->
