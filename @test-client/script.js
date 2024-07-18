@@ -26,8 +26,8 @@ submitIssueForm.addEventListener("submit", async (e) => {
     console.log(e);
     const issueTitleInput = document.getElementById("issueTitle");
     const issueBodyInput = document.getElementById("issueBody");
-    const title = issueTitleInput.value;
-    const body = issueBodyInput.value;
+    const title = issueTitleInput.value.trim();
+    const body = issueBodyInput.value.trim();
     if (!title || !body) {
       return;
     }
