@@ -22,6 +22,8 @@ try {
 -------------------------------- */
 submitIssueForm.addEventListener("submit", async (e) => {
   try {
+    e.preventDefault();
+    console.log(e);
     const issueTitleInput = document.getElementById("issueTitle");
     const issueBodyInput = document.getElementById("issueBody");
     const title = issueTitleInput.value;
