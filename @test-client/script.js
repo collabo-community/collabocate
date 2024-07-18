@@ -20,7 +20,7 @@ try {
 /* --------------------------------
   Submit an Issue ticket through UI
 -------------------------------- */
-submitIssueButton.addEventListener("click", async () => {
+submitIssueForm.addEventListener("submit", async (e) => {
   try {
     const issueTitleInput = document.getElementById("issueTitle");
     const issueBodyInput = document.getElementById("issueBody");
