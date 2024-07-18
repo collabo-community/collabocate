@@ -1,8 +1,9 @@
-import config from './lib/load.config.js';
+import config from "./lib/load.config.js";
 
-const submitIssueButton = document.getElementById('submitIssueButton');
+const submitIssueForm = document.getElementById("submitIssueForm");
+// const submitIssueButton = document.getElementById("submitIssueButton");
 
-const displayToastrMessage = document.getElementById('displayToastrMessage');
+const displayToastrMessage = document.getElementById("displayToastrMessage");
 
 /* ------------------------------
   Fetch repositories on page load
@@ -11,15 +12,15 @@ try {
   const response = await fetch(`${config.backend_url}/repositories`);
   const data = await response.json();
   console.log(data);
-  displayToastrMessage.innerHTML = 'Fetch successful!';
-} catch(error) {
+  displayToastrMessage.innerHTML = "Fetch successful!";
+} catch (error) {
   displayToastrMessage.innerHTML = `An error occurred. ${error.message}.`;
 }
 
 /* --------------------------------
   Submit an Issue ticket through UI
 -------------------------------- */
-submitIssueButton.addEventListener('click', async () => {
+submitIssueButton.addEventListener("click", async () => {
   try {
     const issueTitleInput = document.getElementById("issueTitle");
     const issueBodyInput = document.getElementById("issueBody");
@@ -34,10 +35,11 @@ submitIssueButton.addEventListener('click', async () => {
     });
     const data = await response.json();
     console.log(data);
-    issueTitleInput.value = '';
-    issueBodyInput.value = '';
+    issueTitleInput.value = "";
+    issueBodyInput.value = "";
     displayToastrMessage.innerHTML = `${data.message} Follow your issue ticket's progress here: ${data.issue.html_url}`;
   } catch (error) {
-    displayToastrMessage.innerHTML = 'An error occurred. Could not submit issue ticket.';
+    displayToastrMessage.innerHTML =
+      "An error occurred. Could not submit issue ticket.";
   }
 });
