@@ -29,6 +29,7 @@ submitIssueForm.addEventListener("submit", async (e) => {
     const title = issueTitleInput.value.trim();
     const body = issueBodyInput.value.trim();
     if (!title || !body) {
+      displayToastrMessage.innerHTML = "Issue Title and Body cannot be empty.";
       return;
     }
 
