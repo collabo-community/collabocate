@@ -28,6 +28,10 @@ submitIssueForm.addEventListener("submit", async (e) => {
     const issueBodyInput = document.getElementById("issueBody");
     const title = issueTitleInput.value;
     const body = issueBodyInput.value;
+    if (!title || !body) {
+      return;
+    }
+
     const response = await fetch(`${config.backend_url}/issues`, {
       method: "POST",
       headers: {
