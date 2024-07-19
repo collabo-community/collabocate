@@ -1,7 +1,6 @@
 import config from "./lib/load.config.js";
 
 const submitIssueForm = document.getElementById("submitIssueForm");
-// const submitIssueButton = document.getElementById("submitIssueButton");
 
 const displayToastrMessage = document.getElementById("displayToastrMessage");
 
