@@ -12,7 +12,7 @@ try {
   const data = await response.json();
   console.log(data);
   displayToastrMessage.innerHTML = 'Fetch successful!';
-} catch (error) {
+} catch(error) {
   displayToastrMessage.innerHTML = `An error occurred. ${error.message}.`;
 }
 
@@ -32,9 +32,9 @@ submitIssueForm.addEventListener('submit', async (e) => {
     }
 
     const response = await fetch(`${config.backend_url}/issues`, {
-      method: 'POST',
+      method: "POST",
       headers: {
-        'Content-Type': 'application/json',
+        "Content-Type": "application/json",
       },
       body: JSON.stringify({ title, body }),
     });
@@ -44,7 +44,6 @@ submitIssueForm.addEventListener('submit', async (e) => {
     issueBodyInput.value = '';
     displayToastrMessage.innerHTML = `${data.message} Follow your issue ticket's progress here: ${data.issue.html_url}`;
   } catch (error) {
-    displayToastrMessage.innerHTML =
-      'An error occurred. Could not submit issue ticket.';
+    displayToastrMessage.innerHTML = 'An error occurred. Could not submit issue ticket.';
   }
 });
