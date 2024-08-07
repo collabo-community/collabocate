@@ -1,6 +1,6 @@
 import config from './lib/load.config.js';
 
-const submitIssueButton = document.getElementById('submitIssueButton');
+const submitIssueForm = document.getElementById('submitIssueForm');
 
 const displayToastrMessage = document.getElementById('displayToastrMessage');
 
@@ -19,12 +19,18 @@ try {
 /* --------------------------------
   Submit an Issue ticket through UI
 -------------------------------- */
-submitIssueButton.addEventListener('click', async () => {
+submitIssueForm.addEventListener('submit', async (e) => {
   try {
-    const issueTitleInput = document.getElementById("issueTitle");
-    const issueBodyInput = document.getElementById("issueBody");
-    const title = issueTitleInput.value;
-    const body = issueBodyInput.value;
+    e.preventDefault();
+    const issueTitleInput = document.getElementById('issueTitle');
+    const issueBodyInput = document.getElementById('issueBody');
+    const title = issueTitleInput.value.trim();
+    const body = issueBodyInput.value.trim();
+    if (!title || !body) {
+      displayToastrMessage.innerHTML = 'Issue Title and Body cannot be empty.';
+      return;
+    }
+
     const response = await fetch(`${config.backend_url}/issues`, {
       method: "POST",
       headers: {
