@@ -30,6 +30,7 @@ Contribute to project: See [Community and Documenation](https://resources.collab
       <td align="center" valign="top" width="16.66%"><a href="https://github.com/Danbaba1"><img src="https://avatars.githubusercontent.com/u/98762494?v=4?s=100" width="100px;" alt="Daniel Oladepo"/><br /><sub><b>Daniel Oladepo</b></sub></a><br /><a href="https://github.com/collabo-community/collabocate/commits?author=Danbaba1" title="Code">💻</a></td>
       <td align="center" valign="top" width="16.66%"><a href="https://github.com/Ifycode"><img src="https://avatars.githubusercontent.com/u/45185388?v=4?s=100" width="100px;" alt="Mary @Ifycode"/><br /><sub><b>Mary @Ifycode</b></sub></a><br /><a href="https://github.com/collabo-community/collabocate/commits?author=Ifycode" title="Code">💻</a></td>
       <td align="center" valign="top" width="16.66%"><a href="https://tylerjusflyportfolio.netlify.app/"><img src="https://avatars.githubusercontent.com/u/53145644?v=4?s=100" width="100px;" alt="Momoh Taiwo"/><br /><sub><b>Momoh Taiwo</b></sub></a><br /><a href="https://github.com/collabo-community/collabocate/commits?author=tylerjusfly" title="Code">💻</a></td>
+      <td align="center" valign="top" width="16.66%"><a href="https://github.com/samuko-things"><img src="https://avatars.githubusercontent.com/u/75276934?v=4?s=100" width="100px;" alt="Obiagba Samuel"/><br /><sub><b>Obiagba Samuel</b></sub></a><br /><a href="https://github.com/collabo-community/collabocate/commits?author=samuko-things" title="Code">💻</a></td>
     </tr>
   </tbody>
 </table>
