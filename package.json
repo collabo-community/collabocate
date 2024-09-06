@@ -4,7 +4,7 @@
   "description": "Collabocate is a set of integration apps to help non-technical and technical contributors/users alike, to participate in open source project development and get carried along",
   "main": "api-server/server.ts",
   "scripts": {
-    "dev:client": "node -r esm @test-client/lib/generate.config.js && nodemon -r esm @test-client/server.js",
+    "dev:client": "nodemon -r esm @dev-client/server.js",
     "dev:api": "nodemon --exec ts-node @api-server/server.ts",
     "lint": "esw src --ext .ts --color",
     "lint:watch": "npm run lint -- --watch"
