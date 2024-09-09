@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Collabocate | <%- page.name %> </title>
+    <link rel="stylesheet" href="../styles_@BlocksCSS/bb-base+app.css">
+  </head>
+  <body class="bb-app_body">
+    <app-sidebar><%- include('partials/sidebar') %></app-sidebar>
+    <app-content>
+      <main class="bb-content-group__app_body">
+        <%- body %>
+      </main>
+    </app-content>
+    <collabocate-githubsync><%- include('@plugin_githubsync/githubsync') %></collabocate-githubsync>
+    <script>
+      const backend_URL = <%- JSON.stringify(backendURL) %>;
+      const page_name = <%- JSON.stringify(page.name) %>;
+    </script>
+    <script type="module" src="./@library_external/transform.js"></script>
+    <script type="module" src="./@plugin_githubsync/githubsync.js"></script>
+  </body>
+</html>

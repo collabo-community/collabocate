@@ -1,0 +1,81 @@
+@import url('https://fonts.googleapis.com/css2?family=Anek+Gujarati:wght@100..800&display=swap');
+
+.bb-githubsync_plugin {
+    position: absolute;
+    bottom: 30px;
+    right: 30px;
+
+    width: 430px;
+
+    color: #3D4348;
+    background: white;
+
+    border-radius: 5px;
+    box-shadow: 0 0 30px 5px #e5e5e5;
+
+    overflow: auto;
+}
+
+.bb-githubsync_header {
+    font-weight: bold;
+    font-family: "Anek Gujarati", sans-serif;
+    background: #2e2e2e;
+    color: white;
+    padding: 25px 0;
+
+    overflow: hidden;
+}
+
+.bb-githubsync_header-inner {
+    font-size: 1.5em;
+    display: flex;
+    justify-content: space-between;
+}
+
+.bb-githubsync_header-emoji {
+    font-size: 0.81em;
+    margin-left: 10px;
+}
+
+.bb-githubsync_font-zero {
+    font-size: 0;
+}
+
+.bb-githubsync_close-btn {
+    font-size: 1em;
+    background: transparent;
+    max-height: 20px;
+    max-width: 20px;
+}
+
+.bb-githubsync_form {
+    padding-top: 15px;
+    padding-bottom: 30px;
+}
+
+.bb-githubsync_label {
+    font-size: 1em;
+    font-weight: 600;
+}
+
+.bb-githubsync_input {
+    font-size: 0.81em;
+    border: 0.3px solid #C1CDD7;
+    border-radius: 8px;
+    margin-top: 10px;
+    margin-bottom: 15px;
+    padding: 14px 20px;
+}
+
+.bb-githubsync_textarea {
+    min-height: 110px;
+}
+
+.bb-githubsync_submit-form-button {
+    font-size: 1em;
+    background: #025aa7;
+    color: white;
+
+    padding: 16px 0;
+    border-radius: 10px;
+}

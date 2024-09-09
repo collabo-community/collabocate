@@ -1,0 +1,115 @@
+
+.bb-app_body {
+    /* struture */
+    display: grid;
+    grid-template-columns: 320px 1fr;
+    grid-template-rows: 1fr;
+
+    /* visual appeal */
+    color: #131313;
+    font-family: "Open Sans", sans-serif;
+}
+
+.bb-app_sidebar {
+    /* visual appeal */
+    border-right: 1px solid #e4e4e4;
+}
+
+.bb-app_title {
+    /* visual appeal */
+    font-size: 1.1em;
+    font-weight: 500;
+}
+
+.bb-app_title__sub {
+    /* visual appeal */
+    color: #5e5e5e;
+    min-height: 15.5px;
+    font-size: 0.7em;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.bb-app_nav {
+    /* visual appeal */
+    border-top: 1px solid #e4e4e4;
+    border-bottom: 1px solid #e4e4e4;
+    margin-top: 60px;
+    margin-bottom: 60px;
+}
+
+.bb-app_nav-link {
+    /* visual appeal */
+    display: block;
+    color: #5f2e2e;
+    text-decoration: none;
+    padding: 10px 0 10px 5px;
+}
+
+.bb-app_nav-link:hover {
+    /* visual appeal */
+    background: #5f2e2e;
+    color: white;
+}
+
+.bb-app_nav-link__line {
+    /* visual appeal */
+    border-top: 1px solid #e4e4e4;
+}
+
+.bb-app_nav-button__group {
+    /* visual appeal */
+    border-top: 1px solid #e4e4e4;
+    border-bottom: 1px solid #e4e4e4;
+}
+
+.bb-app_nav-button__header {
+    /* visual appeal */
+    color: #5e5e5e;
+    text-transform: uppercase;
+    font-size: 0.85em;
+    padding: 5px 0;
+}
+
+.bb-app_nav-button {
+    /* visual appeal */
+    display: block;
+    width: 100%;
+    text-align: left;
+    font-size: 1em;
+    background: white;
+    color: #025aa7;
+    padding: 10px 0 10px 5px;
+}
+
+.bb-app_nav-button:first-child {
+    /* visual appeal */
+    border-radius: 2px 2px 0 0;
+}
+
+.bb-app_nav-button:last-child {
+    /* visual appeal */
+    border-radius: 0 0 2px 2px;
+}
+
+.bb-app_nav-button:hover {
+    /* visual appeal */
+    background: #025aa7;
+    color: white;
+}
+
+.bb-app_nav-button__line {
+    /* visual appeal */
+    border-top: 1px solid #e4e4e4;
+}
+
+.bb-app_notification__count {
+    /* visual appeal */
+    font-size: 0.8em;
+    font-weight: 600;
+    background: #025aa7;
+    color: white;
+    padding: 5px;
+    margin-left: 2px;
+    border-radius: 6px;
+}

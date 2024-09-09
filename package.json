@@ -12,12 +12,14 @@
   "dependencies": {
     "cors": "^2.8.5",
     "dotenv": "^16.0.3",
+    "dotenv-expand": "^11.0.6",
+    "ejs": "^3.1.10",
     "esm": "^3.2.25",
     "express": "^4.18.2",
     "express-async-errors": "^3.1.1",
+    "express-ejs-layouts": "^2.5.1",
     "mongoose": "^7.0.5",
     "morgan": "^1.10.0",
-    "dotenv-expand": "^11.0.6",
     "node-fetch": "^3.3.2"
   },
   "devDependencies": {
@@ -45,5 +47,7 @@
   },
   "author": "Collabo Community [Code Collabo]",
   "license": "AGPL v3.0",
-  "contributors": ["Find list of contributors in project README: https://github.com/collabo-community/collabocate?tab=readme-ov-file#contributors"]
+  "contributors": [
+    "Find list of contributors in project README: https://github.com/collabo-community/collabocate?tab=readme-ov-file#contributors"
+  ]
 }
