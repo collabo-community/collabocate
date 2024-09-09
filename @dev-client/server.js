@@ -10,23 +10,30 @@ dotenvExpand.expand(dotEnv);
 
 const app = express();
 
+/* --------------------------
+  ejs layout setup, enable
+  renaming of layout.ejs file
+  to app.ejs to work.
+-------------------------- */
 app.use(expressEjsLayouts);
 app.set('layout', 'app');
 
-// set the view engine to ejs
+/* --------------------------
+  set the view engine to ejs,
+  and determine folder.
+-------------------------- */
 app.set('view engine', 'ejs');
 app.set('views', './@dev-client/views');
 app.use(express.static(join(__dirname + '/views')));
 
-// app.use('css', express.static(join(__dirname + 'public/css')));
-
+/* ---------------------------------
+  use res.render to load up the ejs
+  view files for the different pages
+--------------------------------- */
 const app_variables = {
   backendURL: process.env.BACKEND_URL,
 }
 
-// use res.render to load up an ejs view file
-
-// Collabocate App home page
 app.get('/', function(req, res) {
   res.render('page-body/dashboard', {
     ...app_variables,
@@ -62,6 +69,9 @@ app.get('/tymecomm/settings', function(req, res) {
   });
 });
 
+/* --------------------
+  Run the client server
+-------------------- */
 const PORT = process.env.CLIENT_APP_PORT || 8080;
 
 app.listen(PORT, () => {
