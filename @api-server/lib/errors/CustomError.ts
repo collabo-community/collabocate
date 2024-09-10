@@ -22,9 +22,3 @@ export class CustomError extends Error implements CustomErrorInterface {
     Error.captureStackTrace(this);
   }
 }
-
-export class UnauthorizedAccessError extends CustomError { 
-  constructor(message: string) {
-    super(message, HttpCode.UNAUTHORIZED);
-  }
-}
