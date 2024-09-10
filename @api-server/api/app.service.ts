@@ -1,4 +1,5 @@
 import { Request } from 'express';
+import { unauthorizedErr } from '../lib/errors/Errors';
 
 export const getIssuesService =  async () => {
     const response = await fetch(`${process.env.REPO_API_URL}/issues`, {
@@ -6,6 +7,9 @@ export const getIssuesService =  async () => {
           Authorization: `Bearer ${process.env.GITHUB_PERSONAL_ACCESS_TOKEN}`,
         },
     });
+    if (response.status === 401) {
+      unauthorizedErr("Unauthorized: Can't access this resource");
+  }
     const data = await response.json();
     return data;
 }
@@ -23,6 +27,11 @@ export const createIssueService =  async (req: Request) => {
           body: body + '\n\n' + '#' + '\n' + '> Submitted via **Collabocate** [[GitHubSync]](https://github.com/collabo-community/collabocate)',
         }),
     });
+
+    if (response.status === 401) {
+     unauthorizedErr("Unauthorized: Can't access this resource");
+  }
+
     const data = await response.json();
     return data;
 }
@@ -33,6 +42,11 @@ export const getPullRequestsService =  async () => {
           Authorization: `Bearer ${process.env.GITHUB_PERSONAL_ACCESS_TOKEN}`,
         },
     });
+
+    if (response.status === 401) {
+      unauthorizedErr("Unauthorized: Can't access this resource");
+  }
+
     const data = await response.json();
     return data;
 }
@@ -44,6 +58,11 @@ export const getRepositoriesService =  async () => {
           },
         }
     );
+
+    if (response.status === 401) {
+      unauthorizedErr("Unauthorized: Can't access this resource");
+  }
+
     const data = await response.json();
     return data;
 }
