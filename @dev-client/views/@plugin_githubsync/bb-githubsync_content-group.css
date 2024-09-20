@@ -1,0 +1,10 @@
+
+.bb-content-group__githubsync_plugin {
+    width: calc(100% - 60px);
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.bb-content-group__githubsync_form-inner {
+    width: 100%;
+}

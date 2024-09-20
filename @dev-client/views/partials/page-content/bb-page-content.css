@@ -1,0 +1,13 @@
+
+.bb-page-content_body {
+    color: #ececec;
+    border: 1px solid #ececec;
+    border-radius: 3px;
+    height: 50%;
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2em;
+    font-weight: bold;
+}

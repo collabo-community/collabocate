@@ -1,0 +1,43 @@
+
+<link rel="stylesheet" href="../@plugin_githubsync/bb-githubsync.css">
+<link rel="stylesheet" href="../@plugin_githubsync/bb-githubsync_content-group.css">
+
+<div class="bb-githubsync_plugin">
+    <header class="bb-githubsync_header"> 
+        <div class="bb-content-group__githubsync_plugin bb-githubsync_header-inner">
+            <h4>Hi @collabo-user <span class="bb-githubsync_header-emoji">&#128075;</span></h4>
+            <div class="bb-githubsync_font-zero">
+                <button class="bb-githubsync_close-btn">
+                    <img src="../assets/close-icon.png" alt="Exit icon">
+                </button>
+            </div>
+        </div>
+        <p class="bb-content-group__githubsync_plugin">Collabocate | GitHub Sync</p>
+    </header>
+    <form class="bb-content-group__githubsync_plugin bb-githubsync_form" id="submitIssueForm">
+      <div>
+        <label class="bb-githubsync_label" for="issueTemplates">Choose Report Type</label>
+        <br />
+        <select class="bb-content-group__githubsync_form-inner bb-githubsync_input" name="issue_templates" id="issueTemplates">
+          <option value=""> -- Select issue template -- </option>
+          <!-- Relace the 3 options below with dynamic values from API server -->
+          <option value="report-a-bug">Report a bug</option>
+          <option value="report-an-issue">Report an issue</option>
+          <option value="suggest-an-improvement">Submit an improvement</option>
+          <!-- --------------------------------------------- -->
+        </select>
+      </div>
+      <div>
+        <label class="bb-githubsync_label" for="issueTitle">Issue Title</label>
+        <br />
+        <input class="bb-content-group__githubsync_form-inner bb-githubsync_input" type="text" id="issueTitle" />
+      </div>
+      <div>
+        <label class="bb-githubsync_label" for="issueBody">Issue Body</label>
+        <br />
+        <textarea class="bb-content-group__githubsync_form-inner bb-githubsync_input bb-githubsync_textarea" id="issueBody"></textarea>
+      </div>
+      <button class="bb-content-group__githubsync_form-inner bb-githubsync_submit-form-button" id="submitIssueButton">Submit Issue Ticket</button>
+      <div id="displayToastrMessage"></div>
+    </form>
+</div>

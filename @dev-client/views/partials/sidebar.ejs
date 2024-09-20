@@ -1,0 +1,26 @@
+<div class="bb-content-group__app_body bb-app_sidebar">
+  <div class="bb-content-group__app_sidebar">
+    <p class="bb-app_title">Collabocate | <%- page.name %></p>
+    <p class="bb-app_title__sub">
+      <% if(page.route === 'tymecomm'){ %>
+        sub-page - <%- page.subpage_name %>
+      <% } %>
+    </p>
+  </div>
+  <nav class="bb-content-group__app_sidebar bb-app_nav">
+    <a class="bb-app_nav-link" href="/">Dashboard</a>
+    <hr class="bb-app_nav-link__line"/>
+    <a class="bb-app_nav-link" href="/tymecomm">Tyme Comm</a>
+  </nav>
+  <h4 class="bb-content-group__app_sidebar bb-app_nav-button__header">GitHub Sync</h4>
+  <div class="bb-content-group__app_sidebar bb-app_nav-button__group">
+    <button class="bb-app_nav-button">Issue Report</button>
+    <hr class="bb-app_nav-button__line"/>
+    <button class="bb-app_nav-button">
+      <span>
+        Notification 
+        <span class="bb-app_notification__count"> 20 </span>
+      </span>
+    </button>
+  </div>
+</div>

@@ -1,0 +1,29 @@
+.bb-tymecomm_header {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.bb-tymecomm_nav {
+    display: flex;
+    gap: 5px;
+}
+
+.bb-tymecomm_nav-link {
+    display: block;
+    width: 100px;
+
+    text-decoration: none;
+    text-align: center;
+    padding: 6px 0;
+
+    border: 1px solid #5f2e2e;
+    border-radius: 3px;
+
+    background: #5f2e2e;
+    color: white;
+}
+
+.bb-tymecomm_nav-link:hover {
+    background: white;
+    color: #5f2e2e;
+}

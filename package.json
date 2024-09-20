@@ -4,7 +4,7 @@
   "description": "Collabocate is a set of integration apps to help non-technical and technical contributors/users alike, to participate in open source project development and get carried along",
   "main": "api-server/server.ts",
   "scripts": {
-    "dev:client": "node -r esm @test-client/lib/generate.config.js && nodemon -r esm @test-client/server.js",
+    "dev:client": "nodemon -r esm @dev-client/server.js",
     "dev:api": "nodemon --exec ts-node @api-server/server.ts",
     "lint": "esw src --ext .ts --color",
     "lint:watch": "npm run lint -- --watch"
@@ -12,12 +12,14 @@
   "dependencies": {
     "cors": "^2.8.5",
     "dotenv": "^16.0.3",
+    "dotenv-expand": "^11.0.6",
+    "ejs": "^3.1.10",
     "esm": "^3.2.25",
     "express": "^4.18.2",
     "express-async-errors": "^3.1.1",
+    "express-ejs-layouts": "^2.5.1",
     "mongoose": "^7.0.5",
     "morgan": "^1.10.0",
-    "dotenv-expand": "^11.0.6",
     "node-fetch": "^3.3.2"
   },
   "devDependencies": {
@@ -45,5 +47,7 @@
   },
   "author": "Collabo Community [Code Collabo]",
   "license": "AGPL v3.0",
-  "contributors": ["Find list of contributors in project README: https://github.com/collabo-community/collabocate?tab=readme-ov-file#contributors"]
+  "contributors": [
+    "Find list of contributors in project README: https://github.com/collabo-community/collabocate?tab=readme-ov-file#contributors"
+  ]
 }
