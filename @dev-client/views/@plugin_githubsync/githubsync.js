@@ -26,6 +26,12 @@ submitIssueForm.addEventListener('submit', async (e) => {
       },
       body: JSON.stringify({ title, body }),
     });
+
+if (response.status === 401){
+  displayToastrMessage.innerHTML = 'Unauthorized: Can\'t access this resource';
+  return;
+}
+
     const data = await response.json();
     console.log(data);
     issueTitleInput.value = '';
