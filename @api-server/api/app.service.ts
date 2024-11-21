@@ -66,3 +66,19 @@ export const getRepositoriesService =  async () => {
     const data = await response.json();
     return data;
 }
+
+export const getIssueTemplatesService = async () => {
+
+  const response = await fetch(`${process.env.REPO_API_URL}/contents/.github/ISSUE_TEMPLATE`, {
+    headers: {
+      Authorization: `Bearer ${process.env.GITHUB_PERSONAL_ACCESS_TOKEN}`,
+    },
+  });
+
+  if (response.status === 401) {
+    unauthorizedErr("Unauthorized: Can't access this resource");
+  }
+
+  const data = await response.json();
+  return data;
+}
