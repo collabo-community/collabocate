@@ -1,6 +1,6 @@
 import { Request, Response } from 'express';
 import { success } from '../lib/helpers';
-import { createIssueService, getIssuesService, getPullRequestsService, getRepositoriesService } from './app.service';
+import { createIssueService, getIssuesService, getPullRequestsService, getRepositoriesService,getIssueTemplatesService } from './app.service';
 
 
 export interface ApiInfo {
@@ -81,4 +81,14 @@ export const getRepositoriesController =  async (req: Request, res: Response) =>
   }
   success(message.success.get);
   return res.status(200).json(response);
+}
+
+export const getIssueTemplatesController = async (req: Request, res: Response) => {
+    const docs = await getIssueTemplatesService();
+    const response = {
+      count: docs.length,
+      templates: docs,
+    };
+    success(message.success.get);
+    return res.status(200).json(response);
 }
