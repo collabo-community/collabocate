@@ -2,6 +2,7 @@ import { getLastIndexOfCharaterInString } from '../@library_external/transform.j
 
 const submitIssueForm = document.getElementById('submitIssueForm');
 const displayToastrMessage = document.getElementById('displayToastrMessage');
+const issueTemplatesDropdown = document.getElementById('issueTemplates');
 
 /* ----------------------------------
     Submit an Issue ticket through UI
@@ -47,6 +48,36 @@ if (response.status === 401){
     displayToastrMessage.innerHTML = 'An error occurred. Could not submit issue ticket.';
   }
 });
+
+const fetchTemplates = async () => {
+  try {
+    const response = await fetch(`${backend_URL}/issue-templates`);
+    if (!response.ok) {
+      throw new Error(`Failed to fetch templates: ${response.statusText}`);
+    }
+    const templates = await response.json();
+    return templates.templates; 
+  } catch (error) {
+    console.error('Error fetching templates:', error);
+    displayToastrMessage.innerHTML = 'Could not load issue templates.';
+    return;
+  }
+};
+
+const fetchTemplatesDropdown = async () => {
+  const templates = await fetchTemplates();
+  templates.forEach((template) => {
+    const option = document.createElement('option');
+    option.value = template.path;
+    option.textContent = template.name
+    issueTemplatesDropdown.appendChild(option);
+  });
+};
+
+
+fetchTemplatesDropdown();
+
+
 
 /* --------------------------------
     Fetch repositories on page load
