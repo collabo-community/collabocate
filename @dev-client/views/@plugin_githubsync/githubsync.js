@@ -2,7 +2,7 @@ import { getLastIndexOfCharaterInString } from '../@library_external/transform.j
 
 const submitIssueForm = document.getElementById('submitIssueForm');
 const displayToastrMessage = document.getElementById('displayToastrMessage');
-const issueTemplatesDropdown = document.getElementById('issueTemplates');
+const issueTemplatesDropdownSelect = document.getElementById('issueTemplates');
 const issueBodyInput = document.getElementById('issueBody');
 /* ----------------------------------
     Submit an Issue ticket through UI
@@ -57,9 +57,9 @@ const fetchTemplates = async () => {
     const templates = await response.json();
     return templates.templates; 
   } catch (error) {
-    console.error('Error fetching templates:', error);
+    console.log('Error fetching templates:', error);
     displayToastrMessage.innerHTML = 'Could not load issue templates.';
-    return;
+    return [];
   }
 };
 
@@ -67,12 +67,33 @@ const fetchTemplatesDropdown = async () => {
   const templates = await fetchTemplates();
   templates.forEach((template) => {
     const option = document.createElement('option');
-    option.value = template.download.url;
+    option.value = template.download_url;
     option.textContent = template.name.replace('.md', '').split('-').join(' ').replace(/^./, char => char.toUpperCase());
-    issueTemplatesDropdown.appendChild(option);
+    issueTemplatesDropdownSelect.appendChild(option);
   });
 };
 
+
+issueTemplatesDropdownSelect.addEventListener('change', async (e) => {
+  const downloadUrl = e.target.value;
+
+  if (!downloadUrl) {
+    issueBodyInput.value = '';
+    return ;
+  }
+
+  try {
+    const response = await fetch(downloadUrl);
+    if (!response.ok) {
+      throw new Error(`Failed to fetch template content: ${response.statusText}`);
+    }
+    const content = await response.text();
+    issueBodyInput.value = content;
+  } catch (error) {
+    console.log('Error fetching template content:', error);
+    displayToastrMessage.innerHTML = 'Could not load selected template content.';
+  }
+});
 
 fetchTemplatesDropdown();
 
