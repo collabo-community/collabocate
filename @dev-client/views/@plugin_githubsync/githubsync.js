@@ -3,7 +3,7 @@ import { getLastIndexOfCharaterInString } from '../@library_external/transform.j
 const submitIssueForm = document.getElementById('submitIssueForm');
 const displayToastrMessage = document.getElementById('displayToastrMessage');
 const issueTemplatesDropdown = document.getElementById('issueTemplates');
-
+const issueBodyInput = document.getElementById('issueBody');
 /* ----------------------------------
     Submit an Issue ticket through UI
 ---------------------------------- */
@@ -11,7 +11,6 @@ submitIssueForm.addEventListener('submit', async (e) => {
   try {
     e.preventDefault();
     const issueTitleInput = document.getElementById('issueTitle');
-    const issueBodyInput = document.getElementById('issueBody');
     const title = issueTitleInput.value.trim();
     const body = issueBodyInput.value.trim();
     if (!title || !body) {
