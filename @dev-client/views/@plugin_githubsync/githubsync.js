@@ -67,7 +67,7 @@ const fetchTemplatesDropdown = async () => {
   const templates = await fetchTemplates();
   templates.forEach((template) => {
     const option = document.createElement('option');
-    option.value = template.path;
+    option.value = template.download.url;
     option.textContent = template.name.replace('.md', '').split('-').join(' ').replace(/^./, char => char.toUpperCase());
     issueTemplatesDropdown.appendChild(option);
   });
