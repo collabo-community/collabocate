@@ -65,14 +65,13 @@ const fetchTemplates = async () => {
 
 const fetchTemplatesDropdown = async () => {
   const templates = await fetchTemplates();
-  templates.forEach((template) => {
-    const option = document.createElement('option');
-    option.value = template.download_url;
-    option.textContent = template.name.replace('.md', '').split('-').join(' ').replace(/^./, char => char.toUpperCase());
-    issueTemplatesDropdownSelect.appendChild(option);
-  });
+ templates.forEach((template) => {
+  const optionTemplate = `<option value=${template.download_url}> 
+  ${template.name.replace('.md', '').split('-').join(' ').replace(/^./, char => char.toUpperCase())} 
+  </option>`;
+  issueTemplatesDropdownSelect.insertAdjacentHTML('beforeend', optionTemplate );
+ });
 };
-
 
 issueTemplatesDropdownSelect.addEventListener('change', async (e) => {
   const downloadUrl = e.target.value;
