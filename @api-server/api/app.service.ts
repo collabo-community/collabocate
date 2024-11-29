@@ -1,5 +1,5 @@
 import { Request } from 'express';
-import { unauthorizedErr } from '../lib/errors/Errors';
+import { unAuthorizedErr } from '../lib/errors/Errors';
 
 export const getIssuesService =  async () => {
     const response = await fetch(`${process.env.REPO_API_URL}/issues`, {
@@ -8,7 +8,7 @@ export const getIssuesService =  async () => {
         },
     });
     if (response.status === 401) {
-      unauthorizedErr("Unauthorized: Can't access this resource");
+      unAuthorizedErr("Unauthorized: Can't access this resource");
   }
     const data = await response.json();
     return data;
@@ -29,7 +29,7 @@ export const createIssueService =  async (req: Request) => {
     });
 
     if (response.status === 401) {
-     unauthorizedErr("Unauthorized: Can't access this resource");
+     unAuthorizedErr("Unauthorized: Can't access this resource");
   }
 
     const data = await response.json();
@@ -44,7 +44,7 @@ export const getPullRequestsService =  async () => {
     });
 
     if (response.status === 401) {
-      unauthorizedErr("Unauthorized: Can't access this resource");
+      unAuthorizedErr("Unauthorized: Can't access this resource");
   }
 
     const data = await response.json();
@@ -60,7 +60,7 @@ export const getRepositoriesService =  async () => {
     );
 
     if (response.status === 401) {
-      unauthorizedErr("Unauthorized: Can't access this resource");
+      unAuthorizedErr("Unauthorized: Can't access this resource");
   }
 
     const data = await response.json();
@@ -76,7 +76,7 @@ export const getIssueTemplatesService = async () => {
   });
 
   if (response.status === 401) {
-    unauthorizedErr("Unauthorized: Can't access this resource");
+    unAuthorizedErr("Unauthorized: Can't access this resource");
   }
 
   const data = await response.json();

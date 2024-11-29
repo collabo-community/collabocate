@@ -1,4 +1,4 @@
-import { CustomError, HttpCode} from './CustomError';
+import { CustomError, HttpCode } from './CustomError';
 
 // --- Error Classes ---
 class NotFoundError extends CustomError {
@@ -10,12 +10,10 @@ class NotFoundError extends CustomError {
 class BadRequestError extends CustomError {
   constructor(message: string){
     super(message, HttpCode.BAD_REQUEST)
-
   }
 }
 
-
-class UnauthorizedError extends CustomError {
+class UnAuthorizedError extends CustomError {
   constructor(message: string){
     super(message, HttpCode.UNAUTHORIZED)
   }
@@ -26,13 +24,13 @@ class UnauthorizedError extends CustomError {
 interface ThrowError {
   notFoundErr: (message: string) => void;
   badRequestErr: (message: string) => void;
-  unauthorizedErr: (message: string) => void;
+  unAuthorizedErr: (message: string) => void;
 }
 
 const throwError: ThrowError = {
   notFoundErr: (message) => { throw new NotFoundError(message); },
   badRequestErr: (message) => { throw new BadRequestError(message); },
-  unauthorizedErr: (message) => { throw new UnauthorizedError(message); },
+  unAuthorizedErr: (message) => { throw new UnAuthorizedError(message); },
 };
 
-export const { notFoundErr, badRequestErr, unauthorizedErr } = throwError;
+export const { notFoundErr, badRequestErr, unAuthorizedErr } = throwError;
