@@ -1,6 +1,6 @@
 # @collabo-community/collabocate
 
-V1.0.0 development in progress. Contributions welcome. Learn about how you can contribute to the project: [resources.collabo.community](https://resources.collabo.community)
+V1.0.0 development in progress. Contributions welcome. Learn how you can contribute to the project: [resources.collabo.community](https://resources.collabo.community)
 
 #
 
