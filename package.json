@@ -5,8 +5,6 @@
   "main": "api-server/server.ts",
   "scripts": {
     "dev:client": "nodemon -r esm @dev-client/server.js",
-    "dev:api:atlas": "nodemon --exec ts-node @api-server/server.ts",
-    "dev:api:local": "nodemon --exec ts-node @api-server/server.ts",
     "lint": "esw --ext .ts --color",
     "lint:watch": "npm run lint -- --watch"
   },

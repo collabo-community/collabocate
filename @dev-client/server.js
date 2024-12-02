@@ -72,7 +72,7 @@ app.get('/tymecomm/settings', function(req, res) {
 /* --------------------
   Run the client server
 -------------------- */
-const PORT = process.env.CLIENT_APP_PORT || 8080;
+const PORT = process.env.PORT || 8080;
 
 app.listen(PORT, () => {
   console.log(`Client running on port ${PORT}`);
