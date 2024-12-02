@@ -3,10 +3,8 @@ import { join } from 'path';
 import expressEjsLayouts from 'express-ejs-layouts';
 
 import dotenv from 'dotenv';
-import dotenvExpand from 'dotenv-expand';
 
-const dotEnv = dotenv.config();
-dotenvExpand.expand(dotEnv);
+dotenv.config();
 
 const app = express();
 
