@@ -87,6 +87,14 @@ issueTemplatesDropdownSelect.addEventListener('change', async (e) => {
       throw new Error(`Failed to fetch template content: ${response.statusText}`);
     }
     let content = await response.text();
+
+    if (content.startsWith('---')) {
+      const findIndex = content.indexOf('---', 3);
+      if (findIndex !== -1) {
+        content = content.slice(findIndex + 3).trim();
+      }
+    }
+
     issueBodyInput.value = content;
   } catch (error) {
     console.log('Error fetching template content:', error);
