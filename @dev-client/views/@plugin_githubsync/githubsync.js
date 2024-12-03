@@ -19,7 +19,7 @@ submitIssueForm.addEventListener('submit', async (e) => {
     }
 
     // eslint-disable-next-line no-undef
-    const response = await fetch(`${backend_URL}/issues`, {
+    const response = await fetch(`${backend_URL}/github/issues`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -50,7 +50,7 @@ if (response.status === 401){
 
 const fetchTemplates = async () => {
   try {
-    const response = await fetch(`${backend_URL}/issue-templates`);
+    const response = await fetch(`${backend_URL}/github/issue-templates`);
     if (!response.ok) {
       throw new Error(`Failed to fetch templates: ${response.statusText}`);
     }
