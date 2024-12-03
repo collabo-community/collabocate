@@ -86,7 +86,7 @@ issueTemplatesDropdownSelect.addEventListener('change', async (e) => {
     if (!response.ok) {
       throw new Error(`Failed to fetch template content: ${response.statusText}`);
     }
-    const content = await response.text();
+    let content = await response.text();
     issueBodyInput.value = content;
   } catch (error) {
     console.log('Error fetching template content:', error);
