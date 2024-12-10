@@ -88,12 +88,12 @@ issueTemplatesDropdownSelect.addEventListener('change', async (e) => {
     }
     let content = await response.text();
 
-    if (content.startsWith('---')) {
-      const findIndex = content.indexOf('---', 3);
+      const findIndex = content.indexOf('<!-- Issue template by Collabo Community -->');
       if (findIndex !== -1) {
-        content = content.slice(findIndex + 3).trim();
+        content = content.slice(findIndex + 46).trim();
       }
-    }
+    
+
 
     issueBodyInput.value = content;
   } catch (error) {
